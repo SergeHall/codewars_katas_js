@@ -19,18 +19,14 @@
 
 function countSmileys(arr) {
   let sum = 0;
+
   for (let i of arr) {
-    console.log(i.slice(1, 2));
-    if (i.length === 2) {
-      if ((i.slice(0, 1) === ":" || i.slice(0, 1) === ";")
-        && (i.slice(-1) === "D" || i.slice(-1) === ")")) {
+    if ((i.slice(0, 1) === ":" || i.slice(0, 1) === ";") && (i.slice(-1) === "D" || i.slice(-1) === ")")) {
+      if (i.length === 2) {
         sum += 1;
+        continue
       }
-    }
-    if (i.length === 3) {
-      if ((i.slice(0, 1) === ":" || i.slice(0, 1) === ";")
-        && (i.slice(1, 2) === "-" || i.slice(1, 2) === "~")
-        && (i.slice(-1) === "D" || i.slice(-1) === ")")) {
+      if (i.length === 3 && (i.slice(1, 2) === "-" || i.slice(1, 2) === "~")) {
         sum += 1;
       }
     }
