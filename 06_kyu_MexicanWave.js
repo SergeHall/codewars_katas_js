@@ -33,3 +33,5 @@ function wave(str) {
   }
   return newArrWave;
 }
+
+wave("hello")
